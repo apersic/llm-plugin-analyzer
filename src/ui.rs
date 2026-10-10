@@ -34,6 +34,7 @@ pub struct App {
     flashes: Flashes,
     chat_filter: String,
     locked: bool,
+    always_labels: bool,
     needs_fit: bool,
     roster: bool,
     open: HudOpen,
@@ -99,6 +100,7 @@ impl App {
             flashes: Flashes::default(),
             chat_filter: String::new(),
             locked: false,
+            always_labels: false,
             needs_fit: true,
             roster: false,
             open: HudOpen::default(),
@@ -290,6 +292,7 @@ impl eframe::App for App {
                                 );
                             }
                             ui.checkbox(&mut self.locked, "locked");
+                            ui.checkbox(&mut self.always_labels, "always show labels");
                             stat_row(
                                 ui,
                                 &mut self.flashes,
@@ -351,6 +354,7 @@ impl eframe::App for App {
                 &mut self.dragging,
                 &mut self.needs_fit,
                 self.locked,
+                self.always_labels,
             );
         });
     }
@@ -876,6 +880,7 @@ fn paint_graph(
     dragging: &mut bool,
     needs_fit: &mut bool,
     locked: bool,
+    always_labels: bool,
 ) {
     let rect = ui.available_rect_before_wrap();
     let resp = ui.allocate_rect(rect, Sense::click_and_drag());
@@ -1019,7 +1024,7 @@ fn paint_graph(
         };
         let r = (n.r * cam.zoom * scale).max(2.0);
         paint_node(&painter, n, center, r, hovered, chosen, active);
-        if chosen || hovered || cam.zoom > 1.4 || n.label == theme::CHAT_LABEL {
+        if always_labels || chosen || hovered || cam.zoom > 1.4 || n.label == theme::CHAT_LABEL {
             painter.text(
                 center + Vec2::new(r + 6.0, 0.0),
                 Align2::LEFT_CENTER,
