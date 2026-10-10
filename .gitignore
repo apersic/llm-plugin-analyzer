@@ -1,0 +1,4 @@
+/target
+/shots
+/.audit
+**/*.rs.bk
