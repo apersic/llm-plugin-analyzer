@@ -143,8 +143,11 @@ GRAPH controls:
 
 - LIVE badge when `Board.live`
 - `locked` checkbox, default off
+- `always show labels` checkbox, default off
 - Nodes count
 - Visits count
+
+Node labels paint when `always show labels` is on, or when the node is hovered, selected, named `chat`, or the camera zoom is greater than 1.4.
 
 Camera:
 
