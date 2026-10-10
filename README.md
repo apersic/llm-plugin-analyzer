@@ -38,7 +38,7 @@ The left HUD has seven sections. Click a header to collapse it.
 2. **SCOPE.** Fold All, one workspace, or one chat. The chat list is the transcripts already on disk.
 3. **STATS.** Sessions, events, links, and playbook-to-skill routing.
 4. **PROMPT.** Preview of the latest root-thread user turn in this scope.
-5. **GRAPH.** **LIVE** means that turn has not ended. **locked** keeps the camera fitted. Leave it off to pan and zoom. The window starts fitted and unlocked.
+5. **GRAPH.** **LIVE** means that turn has not ended. **locked** keeps the camera fitted. Leave it off to pan and zoom. The window starts fitted and unlocked. **always show labels** paints every node name. Off, a label appears on hover, on the selected node, on `chat`, or when zoom is past 1.4.
 6. **LANES.** Color key for Chat, Playbooks, Skills, Principles, and Models.
 7. **TOOLS.** Tool-call counts in this scope.
 
@@ -67,7 +67,7 @@ cargo test
 
 ## Read next
 
-[How to contribute](CONTRIBUTING.md) covers patches and reviews.
+[How to contribute](CONTRIBUTING.md) covers patches and reviews. [Code of conduct](CODE_OF_CONDUCT.md) is the floor for issues and PRs. Read [SECURITY.md](SECURITY.md) before you report a leak of transcripts or secrets.
 
 [Specification](specification.md) lists flags, types, verdicts, and limits.
 

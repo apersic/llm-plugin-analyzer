@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a vulnerability
+    url: https://github.com/apersic/llm-plugin-analyzer/security/advisories/new
+    about: Private advisory. Do not file a public issue for a leak of transcripts or secrets.
+  - name: Code of conduct
+    url: https://github.com/apersic/llm-plugin-analyzer/blob/main/CODE_OF_CONDUCT.md
+    about: How we treat people in issues and PRs.

@@ -1,0 +1,41 @@
+name: Feature
+description: A new fold, a HUD control, or a change to how HIT and MISS are judged.
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Say the job you cannot do with the current window or flags. Name the type in `src/domain.rs` if you already know it.
+  - type: textarea
+    id: job
+    attributes:
+      label: Job
+      description: What you wanted to see or print.
+      placeholder: I want to fold one skill across every workspace and see its hit rate.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: What happens today
+      description: The flag, HUD section, or verdict that is in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: want
+    attributes:
+      label: What you want
+      description: The Board field, CLI flag, or GRAPH control that should exist.
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options:
+        - A HUD or camera control
+        - A new fold or CLI flag
+        - A change to HIT, MISS, or advice
+    validations:
+      required: true

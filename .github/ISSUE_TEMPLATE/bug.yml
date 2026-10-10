@@ -1,0 +1,51 @@
+name: Bug
+description: A crash, a wrong HIT or MISS, or a window that paints the wrong board.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste API keys, `.env` files, or full transcripts. A short redacted snippet is enough.
+        A leak of chats or secrets goes to the [security advisory form](https://github.com/apersic/llm-plugin-analyzer/security/advisories/new).
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Wrong HIT, MISS, or UNKNOWN
+        - Window, camera, or graph
+        - Discovery or `--plugin` / `--plugin-root`
+        - `--report`, `--json`, or `--shot`
+        - Crash or hang
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: What you ran. Use `--release` if that is how you saw it.
+      placeholder: cargo run --release -- --plugin guide-to-the-code
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+      description: The verdict, node, or window you should have seen.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+      description: What happened instead. Quote a tally, a label, or a panic line.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra
+      description: Redacted JSONL snippet, `cargo test` output, or a related file in `src/`.
+    validations:
+      required: false

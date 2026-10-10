@@ -26,3 +26,5 @@ If you change a CLI flag, a HUD label, or a verdict rule, update [specification.
 ## How to send work
 
 Open a pull request against the default branch. Say what you ran. A review that only names style is still useful. A review that names a wrong verdict is better.
+
+Read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before you open an issue or a PR. Read [SECURITY.md](SECURITY.md) before you report a leak. Bugs and features have GitHub issue templates. Pull requests use `.github/PULL_REQUEST_TEMPLATE.md`.
